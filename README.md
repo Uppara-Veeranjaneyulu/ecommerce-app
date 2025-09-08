@@ -45,9 +45,3 @@ This project demonstrates product listing, search, category filter, shopping car
 ```bash
 git clone https://github.com/Uppara-Veeranjaneyulu/ecommerce-app.git
 cd ecommerce-app
-
----
-
-
-
-
