@@ -33,9 +33,6 @@ This project demonstrates product listing, search, category filter, shopping car
 
 ---
 
-
----
-
 ## ⚡ Getting Started
 
 ### 1️⃣ Clone Repository
@@ -44,5 +41,14 @@ git clone https://github.com/Uppara-Veeranjaneyulu/ecommerce-app.git
 cd ecommerce-app
 
 ---
-## deployment link (https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5)
+
+## 🌍 Live Demo
+👉 [ecommerce-app Live Website](https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5)  
+
+---
+
+🌐 Deployment
+
+The project is deployed on Vercel:
+https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5
 
