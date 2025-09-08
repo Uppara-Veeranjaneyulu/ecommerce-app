@@ -35,7 +35,7 @@ This project demonstrates product listing, search, category filter, shopping car
 
 
 ## 🌍 Live Demo
-👉 [ecommerce-app Live Website](https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5)  
+👉 [ecommerce-app Live Website](https://ecommerce-app-p9t5.vercel.app/)  
 
 ---
 
