@@ -33,6 +33,12 @@ This project demonstrates product listing, search, category filter, shopping car
 
 ---
 
+
+## 🌍 Live Demo
+👉 [ecommerce-app Live Website](https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5)  
+
+---
+
 ## ⚡ Getting Started
 
 ### 1️⃣ Clone Repository
@@ -42,13 +48,6 @@ cd ecommerce-app
 
 ---
 
-## 🌍 Live Demo
-👉 [ecommerce-app Live Website](https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5)  
 
----
 
-🌐 Deployment
-
-The project is deployed on Vercel:
-https://vercel.com/uppara-veeranjaneyulus-projects/ecommerce-app-p9t5
 
