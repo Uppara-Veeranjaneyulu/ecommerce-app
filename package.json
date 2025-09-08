@@ -9,6 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+  "overrides": {
+  "debug": "4.3.4"
+},
   "dependencies": {
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
