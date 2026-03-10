@@ -114,32 +114,32 @@ export default function Home() {
           />
           <CategoryCard
             title="Watches"
-            img="https://images.unsplash.com/photo-1508685096489-7aac29a8a70c?auto=format&fit=crop&q=80&w=800"
-            count="5"
+            img="https://images.unsplash.com/photo-1542496658-e33a6d0d50f6?auto=format&fit=crop&q=80&w=800"
+            count="15"
             icon={TrendingUp}
           />
           <CategoryCard
             title="Shoes"
             img="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&q=80&w=800"
-            count="6"
+            count="15"
             icon={Zap}
           />
           <CategoryCard
             title="Gadgets"
             img="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800"
-            count="8"
+            count="12"
             icon={Cpu}
           />
           <CategoryCard
             title="Spectacles"
             img="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=800"
-            count="4"
+            count="10"
             icon={Compass}
           />
           <CategoryCard
             title="Gear"
             img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800"
-            count="12"
+            count="15"
             icon={Layers}
           />
           <CategoryCard
@@ -151,7 +151,7 @@ export default function Home() {
           <CategoryCard
             title="Accessories"
             img="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&q=80&w=800"
-            count="5"
+            count="10"
             icon={Star}
           />
           <CategoryCard

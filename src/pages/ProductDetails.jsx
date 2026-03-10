@@ -10,7 +10,8 @@ import {
     RefreshCw,
     Plus,
     Minus,
-    ChevronRight
+    ChevronRight,
+    Package
 } from 'lucide-react';
 import { fetchProducts } from '../services/api';
 

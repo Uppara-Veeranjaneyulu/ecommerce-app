@@ -19,6 +19,11 @@ export default function Products({ addToCart }) {
     load();
   }, []);
 
+  // Scroll to top when category changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, [activeCategory]);
+
   const categories = (() => {
     let rawCategories = [...new Set(products.map(p => p.category))].sort();
 
