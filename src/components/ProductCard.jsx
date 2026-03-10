@@ -1,11 +1,15 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Plus, Star } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product, addToCart }) {
+  const navigate = useNavigate();
+
   return (
     <motion.div
       whileHover={{ y: -10 }}
+      onClick={() => navigate(`/product/${product.id}`)}
       className="card-premium h-full flex flex-col group cursor-pointer"
     >
       <div className="relative aspect-square overflow-hidden rounded-xl bg-background mb-4 p-4">

@@ -21,6 +21,11 @@ export default function Navbar({ cartCount }) {
           <Link to="/products" className="flex items-center gap-2 hover:text-accent transition-colors">
             <Package className="w-4 h-4" /> Products
           </Link>
+          <SignedIn>
+            <Link to="/orders" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <ShoppingBag className="w-4 h-4" /> Orders
+            </Link>
+          </SignedIn>
         </div>
 
         <div className="flex items-center gap-6">
