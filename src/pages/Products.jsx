@@ -62,7 +62,7 @@ export default function Products({ addToCart }) {
                 <h3 className="font-bold uppercase tracking-widest text-xs">Categories</h3>
               </div>
 
-              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-visible no-scrollbar pb-2 lg:pb-0">
+              <div className="flex lg:flex-col gap-2 overflow-x-auto lg:overflow-y-auto lg:max-h-[60vh] custom-scrollbar pb-2 lg:pb-4 pr-2">
                 {categories.map((cat) => (
                   <button
                     key={cat}

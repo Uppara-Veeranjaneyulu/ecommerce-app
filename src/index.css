@@ -31,6 +31,26 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-emerald-400;
 }
 
+@utility custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: 10px;
+  }
+
+  &:hover::-webkit-scrollbar-thumb {
+    background: rgba(16, 185, 129, 0.3);
+  }
+}
+
 @layer base {
   body {
     @apply bg-background text-gray-100 font-sans antialiased;
