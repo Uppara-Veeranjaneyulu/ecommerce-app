@@ -42,9 +42,8 @@ const ProductDetails = ({ addToCart }) => {
     }, [id, navigate]);
 
     const handleAddToCart = () => {
-        for (let i = 0; i < quantity; i++) {
-            addToCart(product);
-        }
+        addToCart(product, quantity);
+        navigate('/cart');
     };
 
     if (loading) {
