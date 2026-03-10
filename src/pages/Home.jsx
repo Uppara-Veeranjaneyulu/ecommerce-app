@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Star, Shield, Zap, TrendingUp, Mail, Layers, Cpu, Compass } from "lucide-react";
+import { ArrowRight, Star, Shield, Zap, TrendingUp, Mail, Layers, Cpu, Compass, Sofa, Briefcase } from "lucide-react";
 import heroBanner from "../assets/hero_banner_dark_green.jpg";
 import { fetchProducts } from "../services/api";
 import Footer from "../components/Footer";
@@ -105,17 +105,41 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
           <CategoryCard
             title="Electronics"
             img="https://images.unsplash.com/photo-1550009158-9ebf69173e03?auto=format&fit=crop&q=80&w=800"
-            count="12"
+            count="10"
             icon={Cpu}
           />
           <CategoryCard
-            title="Gear & Tools"
-            img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800"
+            title="Watches"
+            img="https://images.unsplash.com/photo-1508685096489-7aac29a8a70c?auto=format&fit=crop&q=80&w=800"
+            count="5"
+            icon={TrendingUp}
+          />
+          <CategoryCard
+            title="Shoes"
+            img="https://images.unsplash.com/photo-1560769629-975ec94e6a86?auto=format&fit=crop&q=80&w=800"
+            count="6"
+            icon={Zap}
+          />
+          <CategoryCard
+            title="Gadgets"
+            img="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&q=80&w=800"
             count="8"
+            icon={Cpu}
+          />
+          <CategoryCard
+            title="Spectacles"
+            img="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&q=80&w=800"
+            count="4"
+            icon={Compass}
+          />
+          <CategoryCard
+            title="Gear"
+            img="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&q=80&w=800"
+            count="12"
             icon={Layers}
           />
           <CategoryCard
@@ -123,6 +147,24 @@ export default function Home() {
             img="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&q=80&w=800"
             count="15"
             icon={Compass}
+          />
+          <CategoryCard
+            title="Accessories"
+            img="https://images.unsplash.com/photo-1583485088034-697b5bc54ccd?auto=format&fit=crop&q=80&w=800"
+            count="5"
+            icon={Star}
+          />
+          <CategoryCard
+            title="Furniture"
+            img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800"
+            count="15"
+            icon={Sofa}
+          />
+          <CategoryCard
+            title="Home Office"
+            img="https://images.unsplash.com/photo-1593062096033-9a26b09da705?auto=format&fit=crop&q=80&w=800"
+            count="10"
+            icon={Briefcase}
           />
         </div>
       </section>

@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Plus, Star } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function ProductCard({ product, addToCart }) {
   const navigate = useNavigate();
+  const [imageError, setImageError] = useState(false);
+
+  // Fallback image using a high-quality product placeholder
+  const fallbackImage = "https://images.unsplash.com/photo-1560343090-f0409e92791a?auto=format&fit=crop&q=80&w=800";
 
   return (
     <motion.div
@@ -14,8 +18,9 @@ export default function ProductCard({ product, addToCart }) {
     >
       <div className="relative aspect-square overflow-hidden rounded-xl bg-background mb-4 p-4">
         <img
-          src={product.image}
+          src={imageError ? fallbackImage : product.image}
           alt={product.name}
+          onError={() => setImageError(true)}
           className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-3 left-3 flex items-center gap-1 bg-black/60 backdrop-blur-md px-2 py-1 rounded-lg border border-white/10">
