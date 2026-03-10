@@ -1,17 +1,22 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { UserButton, SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
-import { ShoppingBag, ShoppingCart, Home, Package } from "lucide-react";
+import { UserButton, SignedIn, SignedOut, SignInButton, useUser, useClerk } from "@clerk/clerk-react";
+import { ShoppingCart, Home, Package, ShoppingBag, User, LogOut, Menu, Search } from "lucide-react";
 
 export default function Navbar({ cartCount }) {
+  const { user } = useUser();
+  const { signOut } = useClerk();
+
   return (
-    <nav className="glass-nav px-6 py-4">
+    <nav className="glass-nav px-6 py-4 fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center gap-2 group">
           <div className="bg-accent p-2 rounded-xl group-hover:rotate-12 transition-transform duration-300">
             <ShoppingBag className="w-6 h-6 text-black" />
           </div>
-          <span className="text-2xl font-black tracking-tighter gradient-text">UXE_STORE</span>
+          <span className="text-2xl font-black tracking-tighter text-white group-hover:text-accent transition-colors uppercase">
+            UXE_STORE
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-sm font-medium">

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import { SignedIn, SignedOut, RedirectToSignIn, SignIn, SignUp } from "@clerk/clerk-react";
+import toast, { Toaster } from "react-hot-toast";
 import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
@@ -29,6 +30,19 @@ export default function App() {
     } else {
       setCart([...cart, { ...product, qty: 1 }]);
     }
+    toast.success(`${product.name} added to cart!`, {
+      style: {
+        background: '#121212',
+        color: '#10b981',
+        border: '1px solid rgba(16, 185, 129, 0.2)',
+        fontWeight: 'bold'
+      },
+      iconTheme: {
+        primary: '#10b981',
+        secondary: '#121212',
+      },
+      position: 'bottom-right'
+    });
   };
 
   const removeFromCart = (id) => {
@@ -44,9 +58,10 @@ export default function App() {
 
   return (
     <Router>
+      <Toaster />
       <div className="min-h-screen bg-background text-gray-100 selection:bg-accent/30 selection:text-white">
         <Navbar cartCount={cart.reduce((sum, i) => sum + i.qty, 0)} />
-        <main className="pt-20">
+        <main>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/products" element={<Products addToCart={addToCart} />} />

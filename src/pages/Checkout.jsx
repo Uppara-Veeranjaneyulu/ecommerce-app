@@ -176,7 +176,7 @@ export default function Checkout({ cart, clearCart }) {
   }
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-6 pt-32 pb-12">
       <h1 className="text-4xl font-black mb-12 tracking-tight uppercase text-white">Secure Checkout</h1>
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">

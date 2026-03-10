@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <div className="relative">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-6">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6">
         {/* Background Mesh/Gradient */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />

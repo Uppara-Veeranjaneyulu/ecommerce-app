@@ -28,7 +28,7 @@ export default function Products({ addToCart }) {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-5xl mx-auto px-6 pt-32 pb-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-12">
         <div>
           <h1 className="text-4xl font-black mb-2 tracking-tight">COLLECTIONS</h1>
@@ -55,8 +55,8 @@ export default function Products({ addToCart }) {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all whitespace-nowrap ${activeCategory === cat
-                    ? "bg-accent text-black"
-                    : "text-gray-500 hover:text-white"
+                  ? "bg-accent text-black"
+                  : "text-gray-500 hover:text-white"
                   }`}
               >
                 {cat}
