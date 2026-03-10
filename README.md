@@ -23,6 +23,7 @@ A high-performance, industrial-grade Ecommerce platform featuring a **"Dark Fore
 * **Authentication**: Fully integrated with **Clerk** for secure user sessions and order history.
 * **SPA Stability**: Customized Vercel configuration for flawless Single Page Application routing (no 404s on reload).
 * **Responsive Core**: Built with **Tailwind CSS 4** for lightning-fast, mobile-first performance.
+* **Order Reporting**: Real-time PDF generation for branded invoices using **jsPDF**, available instantly after checkout and in history.
 * **Toast Feedback**: Instant visual confirmation via **React Hot Toast** for Every user action.
 
 ---
@@ -35,6 +36,7 @@ A high-performance, industrial-grade Ecommerce platform featuring a **"Dark Fore
 - **Icons**: [Lucide React](https://lucide.dev/)
 - **Auth**: [Clerk](https://clerk.com/)
 - **Notifications**: [React Hot Toast](https://react-hot-toast.com/)
+- **Reports**: [jsPDF](https://github.com/parallax/jsPDF) + [jsPDF-AutoTable](https://github.com/simonbengtsson/jspdf-autotable)
 - **Routing**: [React Router](https://reactrouter.com/)
 
 ---
