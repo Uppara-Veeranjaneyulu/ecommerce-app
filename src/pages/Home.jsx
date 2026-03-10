@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ArrowRight, Star, Shield, Zap } from "lucide-react";
+import heroBanner from "../assets/hero_banner_dark_green.jpg";
 
 const FeatureCard = ({ icon: Icon, title, desc }) => (
   <motion.div
@@ -25,7 +26,7 @@ export default function Home() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-background/50 to-background z-10" />
           <img
-            src="/src/assets/hero_banner_dark_green.jpg"
+            src={heroBanner}
             alt="Hero Background"
             className="w-full h-full object-cover opacity-60 scale-105"
           />
