@@ -1,3 +1,61 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0a0a;
+  --color-primary: #052d1b;
+  --color-secondary: #0a3d24;
+  --color-accent: #10b981;
+  --color-surface: #121212;
+  --color-border: #1f2937;
+  --font-sans: "Inter", sans-serif;
+}
+
+@utility glass-nav {
+  @apply sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-white/5;
+}
+
+@utility btn-primary {
+  @apply bg-accent hover:bg-emerald-500 text-black font-semibold px-6 py-3 rounded-full transition-all duration-300 shadow-lg shadow-accent/20 active:scale-95;
+}
+
+@utility btn-outline {
+  @apply border border-white/10 hover:border-accent/50 hover:bg-accent/5 px-6 py-3 rounded-full transition-all duration-300;
+}
+
+@utility card-premium {
+  @apply bg-surface border border-white/5 rounded-2xl p-6 hover:border-accent/30 transition-all duration-300 shadow-xl;
+}
+
+@utility gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-emerald-400;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-gray-100 font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold tracking-tight text-white;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-primary rounded-full hover:bg-secondary;
+}
