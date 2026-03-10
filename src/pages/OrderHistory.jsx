@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Package, Clock, ChevronRight, ShoppingBag, ArrowLeft } from 'lucide-react';
+import { Package, Clock, ChevronRight, ShoppingBag, ArrowLeft, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { fetchOrders } from '../services/api';
+import { generateOrderReport } from '../utils/reportGenerator';
 
 const OrderHistory = () => {
     const [orders, setOrders] = useState([]);
@@ -97,14 +98,24 @@ const OrderHistory = () => {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="flex items-center justify-between md:justify-end gap-8 border-t md:border-t-0 pt-4 md:pt-0 border-white/5">
+                                    <div className="flex items-center justify-between md:justify-end gap-6 border-t md:border-t-0 pt-4 md:pt-0 border-white/5">
                                         <div className="text-right">
                                             <p className="text-sm text-gray-400 mb-1">Total Amount</p>
                                             <p className="text-2xl font-bold text-accent">${order.amount.toFixed(2)}</p>
                                         </div>
-                                        <button className="p-2 hover:bg-white/5 rounded-lg transition-colors group">
-                                            <ChevronRight className="text-gray-400 group-hover:text-accent transition-colors" />
-                                        </button>
+                                        <div className="flex items-center gap-2">
+                                            <button
+                                                onClick={() => generateOrderReport(order)}
+                                                className="p-3 bg-white/5 hover:bg-white/10 rounded-xl transition-all group flex items-center gap-2 text-xs font-bold text-gray-400 hover:text-white border border-white/5"
+                                                title="Download Report"
+                                            >
+                                                <Download size={18} className="group-hover:text-accent transition-colors" />
+                                                <span className="hidden sm:inline">REPORT</span>
+                                            </button>
+                                            <button className="p-3 hover:bg-white/5 rounded-xl transition-colors group">
+                                                <ChevronRight className="text-gray-400 group-hover:text-accent transition-colors" />
+                                            </button>
+                                        </div>
                                     </div>
                                 </div>
 

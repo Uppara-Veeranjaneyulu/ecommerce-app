@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { CheckCircle, CreditCard, Lock, ShieldCheck, ArrowRight } from "lucide-react";
+import { CheckCircle, CreditCard, Lock, ShieldCheck, ArrowRight, Download } from "lucide-react";
 import { createOrder } from "../services/api";
+import { generateOrderReport } from "../utils/reportGenerator";
 import { loadStripe } from "@stripe/stripe-js";
 import {
   Elements,
@@ -15,7 +16,7 @@ import { useUser } from "@clerk/clerk-react";
 // Initialize Stripe
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY);
 
-const CheckoutForm = ({ cart, clearCart, total, setDone, setSentTo }) => {
+const CheckoutForm = ({ cart, clearCart, total, setDone, setSentTo, setLastOrder }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useUser();
@@ -47,7 +48,7 @@ const CheckoutForm = ({ cart, clearCart, total, setDone, setSentTo }) => {
     }
 
     // Simulate server-side order creation
-    const result = await createOrder({
+    const orderData = {
       items: cart.map(item => ({
         id: item.id,
         name: item.name,
@@ -59,11 +60,15 @@ const CheckoutForm = ({ cart, clearCart, total, setDone, setSentTo }) => {
       userEmail: user?.primaryEmailAddress?.emailAddress,
       paymentMethodId: paymentMethod.id,
       timestamp: new Date().toISOString()
-    });
+    };
+
+    const result = await createOrder(orderData);
 
     if (result.success) {
       clearCart();
       setSentTo(result.sentTo);
+      console.log("Order created successfully:", result.orderId);
+      setLastOrder({ ...orderData, id: result.orderId }); // Fix: use orderId from result
       setDone(true);
     } else {
       setError("Failed to process order. Please try again.");
@@ -144,6 +149,7 @@ const CheckoutForm = ({ cart, clearCart, total, setDone, setSentTo }) => {
 export default function Checkout({ cart, clearCart }) {
   const [done, setDone] = useState(false);
   const [sentTo, setSentTo] = useState("");
+  const [lastOrder, setLastOrder] = useState(null);
   const total = cart.reduce((sum, i) => sum + i.price * i.qty, 0);
 
   if (done) {
@@ -160,10 +166,19 @@ export default function Checkout({ cart, clearCart }) {
         <p className="text-gray-400 mb-2 leading-relaxed text-lg">
           Your gear is being prepped for shipment.
         </p>
-        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-10 text-sm">
+        <div className="bg-white/5 border border-white/10 rounded-2xl p-6 mb-8 text-sm">
           <p className="text-gray-400 mb-1 italic">Confirmation email sent to:</p>
           <p className="text-accent font-bold text-lg">{sentTo || "your account email"}</p>
         </div>
+
+        <button
+          onClick={() => lastOrder && generateOrderReport(lastOrder)}
+          className="w-full bg-white/5 hover:bg-white/10 border border-white/10 rounded-2xl p-4 flex items-center justify-center gap-3 mb-10 transition-all group"
+        >
+          <Download className="w-5 h-5 text-accent group-hover:scale-110 transition-transform" />
+          <span className="font-black tracking-widest text-sm text-white">DOWNLOAD ORDER REPORT</span>
+        </button>
+
         <p className="text-gray-500 mb-10">
           You can track your purchase in your
           <Link to="/orders" className="text-accent hover:underline mx-1">Order History</Link>.
@@ -181,7 +196,7 @@ export default function Checkout({ cart, clearCart }) {
 
       <div className="grid lg:grid-cols-2 gap-12 items-start">
         <Elements stripe={stripePromise}>
-          <CheckoutForm cart={cart} clearCart={clearCart} total={total} setDone={setDone} setSentTo={setSentTo} />
+          <CheckoutForm cart={cart} clearCart={clearCart} total={total} setDone={setDone} setSentTo={setSentTo} setLastOrder={setLastOrder} />
         </Elements>
 
         {/* Order Review */}
